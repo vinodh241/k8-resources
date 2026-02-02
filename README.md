@@ -18,8 +18,8 @@ syntax:
 # how to create namespaces?
 -------------------------
 
-* kubectl apply -f <yaml.file> -- create a namespace
-* kubectl delete -f <yaml.file> -- delete the namespace 
+* kubectl apply -f <file.yam> -- create a namespace
+* kubectl delete -f <file.yam> -- delete the namespace 
 
 * kubectl get namespaces  -- to get the namespaces 
 
@@ -30,5 +30,10 @@ syntax:
 * it contains all basic resources 
 * but k8's definition : pod is smallest deployable unit in kubernetes , one pod have multiple containers 
 
+* To create pod command is ?
+-------------------------------
 
+* kubectl apply -f <file.yaml>
+
+* kubectl get pods -- to show the pods 
 

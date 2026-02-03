@@ -109,7 +109,13 @@ container is unable to start
 
  * kubectl top pods
 
- 
+
+# configMap:
+-----------------
+
+* we try to keep the configurations out side of pod definition ,. i;e is called configmap 
+
+
 
 
 

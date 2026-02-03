@@ -23,6 +23,7 @@ syntax:
 
 * kubectl get namespaces  -- to get the namespaces 
 
+
 ## POD:
 --------
 
@@ -40,3 +41,38 @@ syntax:
 * kubectl describe pod <pod-name>  -- to check the pod errors 
 
 Note: if you install os and except to run container it will not run , you should install some softwares then it will run continsouly 
+
+* * *  if you make or add any chnages on sepc: fileds , if you trying to re-create pod it wont work, so need to delete the pods and re-create again 
+
+
+# How to login pod ( inside container) ?
+------------------------------------------
+
+
+* kubectl exec -it <pod-name> -- bash 
+
+* if you have mutli-containers inside pod then how to login?
+----------------------------------------------------------
+
+* kunectl exec -it <pod-name> -c <container-name> -- bash 
+
+                                | 
+                           container name
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# POD                                                                           VS                                                     container
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+* pod is the smallest deployable unit in k8                                                                                
+  A pod can have 1 or many contaners.
+  all containers inside pod sahre same n/w & 
+  storage 
+
+
+* Multi-container are useful in sidecar patterns and proxy patterns. proxy means frist proxy container gets the request , it checks whether reuest should be forwwarded to main container or not 
+
+
+
+
+## CrashLoopBackOFF: Error 
+----------------------
+container is unable to start 
+

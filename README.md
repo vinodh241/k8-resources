@@ -114,8 +114,13 @@ container is unable to start
 -----------------
 
 * we try to keep the configurations out side of pod definition ,. i;e is called configmap 
+* here we keep non conf
+
+* kubectl get configmap
 
 
+# Secrects 
+--------------
 
-
+* Here data should be encoded 
 

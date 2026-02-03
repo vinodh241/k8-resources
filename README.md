@@ -37,3 +37,6 @@ syntax:
 
 * kubectl get pods -- to show the pods 
 
+* kubectl describe pod <pod-name>  -- to check the pod errors 
+
+Note: if you install os and except to run container it will not run , you should install some softwares then it will run continsouly 

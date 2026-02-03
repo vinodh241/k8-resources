@@ -76,3 +76,35 @@ Note: if you install os and except to run container it will not run , you should
 ----------------------
 container is unable to start 
 
+
+## LABLES:
+-----------------
+
+* labels are used as selectors for other resources ......., labels values we cant keep long values, we can keep only 63 charcters 
+
+# Annotations"
+------------------------
+
+* annotations are similar to labels , it is key value pair, but not used as seletors, annatations are used to provision external resources to k8's
+ we keed external informations build url , image registry , etc .. Annatations values can be 256 charcteres 
+
+
+## Resource limiting:
+-----------------------
+* we can limit the resoures using resouce limits
+
+
+# Vertical & Horizontal scaling:
+---------------------------------
+
+
+* before increase the limit need to stop the instance and increase  the resources it is called vertical scaling , we have down time and single point of failures
+
+* Horizontal scaling means prallel creating another instances ( means parallely creating pods) , we are using horizontal scaling 
+
+
+
+
+
+
+

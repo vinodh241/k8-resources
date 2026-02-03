@@ -104,7 +104,12 @@ container is unable to start
 
 
 
+* How to check pods  how much resources utilizing ?
+ ------------------------------------------------
 
+ * kubectl top pods
+
+ 
 
 
 

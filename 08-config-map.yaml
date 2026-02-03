@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-config
+  labels:
+    purpose: config
+data:
+  COURSE: "DevSecOps with AWS"
+  DURATION: "120HRS"
+  TRAINER: "SIVA"
+
+  

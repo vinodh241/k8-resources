@@ -5,10 +5,10 @@ metadata:
   labels:
     project: roboshop
     purpose: multi-container-demo
-  spec:
-    containers: 
-    - name: nginx
-      image: nginx
-    - name: almalinux
-      image: almalinux:9 
+spec:
+  containers: 
+  - name: nginx
+    image: nginx
+  - name: almalinux
+    image: almalinux:9 
   

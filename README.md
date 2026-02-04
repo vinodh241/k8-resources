@@ -212,9 +212,16 @@ container is unable to start
 
 * kubectl get configmap
 
-
 # Secrects 
 --------------
 
 * Here data should be encoded 
+
+# Service Mesh:
+---------------
+
+* pod to pod communication , IP address is not useful since it is ephemeral 
+* we have services in kubernetes to achive 
+ 1. pod to pod communication
+ 2. Load balancing 
 

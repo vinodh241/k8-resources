@@ -6,8 +6,8 @@
  Auto scaling is easy, storage is outside of cluster, roll back and multiple deployment strategies are available in kubernetes. 
  Networking betweem containers is little easy in kubernetes
 
- * cluster:
-  --------
+ # cluster:
+ ================= 
 
 terms:
 

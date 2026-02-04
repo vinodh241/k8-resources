@@ -71,6 +71,7 @@ terms:
 * eksctl delete cluster --config-file=eks.yaml 
 
 * kubectl get nodes -- shows the worker nodes
+
 * everything is called resources in kubernetes 
 
 
@@ -94,6 +95,7 @@ spot -- aws data center have lot of resources
 
 
 syntax:
+
     apiVersion: v1  -- 
     kind: Namespace
     metadata:
@@ -102,28 +104,15 @@ syntax:
         project: roboshop
         environment: dev 
 
+* comman for every resource group
 
 ##
-# namespace:
-  -------------
-
-  * Isolated project space in kubernetes where you can create your workloads
-
-
-syntax:
-    apiVersion: v1  -- 
-    kind: Namespace
-    metadata:
-      name: devlopment
-      labels:
-        project: roboshop
-        environment: dev 
-
 
 # how to create namespaces?
 -------------------------
 
 * kubectl apply -f <file.yam> -- create a namespace
+
 * kubectl delete -f <file.yam> -- delete the namespace 
 
 * kubectl get namespaces  -- to get the namespaces 
@@ -133,10 +122,12 @@ syntax:
 --------
 
 * pod is like container 
+
 * it contains all basic resources 
+
 * but k8's definition : pod is smallest deployable unit in kubernetes , one pod have multiple containers 
 
-* To create pod command is ?
+# To create pod command is ?
 -------------------------------
 
 * kubectl apply -f <file.yaml>
@@ -156,7 +147,7 @@ Note: if you install os and except to run container it will not run , you should
 
 * kubectl exec -it <pod-name> -- bash 
 
-* if you have mutli-containers inside pod then how to login?
+#  if you have mutli-containers inside pod then how to login?
 ----------------------------------------------------------
 
 * kunectl exec -it <pod-name> -c <container-name> -- bash 
@@ -164,7 +155,7 @@ Note: if you install os and except to run container it will not run , you should
                                 | 
                            container name
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# POD                                                                           VS                                                     container
+# POD                                   VS                                                     container
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 * pod is the smallest deployable unit in k8                                                                                
   A pod can have 1 or many contaners.
@@ -173,8 +164,6 @@ Note: if you install os and except to run container it will not run , you should
 
 
 * Multi-container are useful in sidecar patterns and proxy patterns. proxy means frist proxy container gets the request , it checks whether reuest should be forwwarded to main container or not 
-
-
 
 
 ## CrashLoopBackOFF: Error 
@@ -209,7 +198,7 @@ container is unable to start
 
 
 
-* How to check pods  how much resources utilizing ?
+# How to check pods how much resources utilizing ?
  ------------------------------------------------
 
  * kubectl top pods

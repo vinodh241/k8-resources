@@ -227,3 +227,10 @@ container is unable to start
  3. nodeport
 
 
+# NodePorts:
+---------------------
+
+* node port ip is a cluster IP , but it has extra futures, opening a port in worker node , it has internal communication capalities 
+
+
+

@@ -226,7 +226,7 @@ container is unable to start
 
  2. Load balancing  -- it will open one port called nodePort in every node 
    * it will work only in cloud environment
-   
+
 
  3. nodeport -- it will create a loadbalancer and nodeport in the all nodes
 
@@ -240,4 +240,10 @@ container is unable to start
 
 ## How can i create multiple pods to same image?
 =================================================
-* 
+* A replica set purpose is to maintain a stable set of replica pods running at any given time, 
+
+  spec: 
+  replicas: 2
+
+* define a deployment and let that deployment manage replicasets automatically 
+

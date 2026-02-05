@@ -224,4 +224,6 @@ container is unable to start
 * we have services in kubernetes to achive 
  1. pod to pod communication
  2. Load balancing 
+ 3. nodeport
+
 

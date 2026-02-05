@@ -247,3 +247,8 @@ container is unable to start
 
 * define a deployment and let that deployment manage replicasets automatically 
 
+# Deployment:
+===============
+
+* Pod is sub set of replicaset
+* replicaset is a subset of deployment 

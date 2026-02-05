@@ -11,7 +11,7 @@ spec:
     project: roboshop
     environment: dev
   ports: 
-   - protocal: TCP 
+   - protocal: TCP
      port: 80 # service port
      targetPort: 80 # container port 
 ---

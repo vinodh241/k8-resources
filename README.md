@@ -236,7 +236,7 @@ container is unable to start
 
 * node port ip is a cluster IP , but it has extra futures, opening a port in worker node , it has internal communication capalities 
 
-
+* default node port range is { 30000-32767 }
 
 ## How can i create multiple pods to same image?
 =================================================
@@ -252,3 +252,5 @@ container is unable to start
 
 * Pod is sub set of replicaset
 * replicaset is a subset of deployment 
+
+#

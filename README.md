@@ -2,9 +2,8 @@
 --------------------------
 * kubernetes : k8  --PAAS
  -----------------
-
  Auto scaling is easy, storage is outside of cluster, roll back and multiple deployment strategies are available in kubernetes. 
- Networking betweem containers is little easy in kubernetes
+ Networking between containers is little easy in kubernetes
 
  # cluster:
  ================= 
@@ -13,16 +12,24 @@ terms:
 
 * control plane
 * worker nodes 
+* Pods
+* ConfigMap
+* Service
+* RollBack
+* Blue-Green
+* Secrets
+* Replicaset
+* Labels 
+* Namespace
+
 
 * data is not stored in clusters , stored outside of cluster ( volumes)
 * we can configure n number of nodes 
 
-  * A single master and mutliple nodes 
-
-* Here we are writing manifest files 
-
-* using terraform we can create culster 
-* To interact with cluster using kubectl 
+  * A single masternode and mutliple worker nodes 
+  * Here we are writing manifest files 
+  * using terraform we can create culster 
+  * To interact with cluster using kubectl 
 
 # Workstation:
  -----------
@@ -127,6 +134,13 @@ syntax:
 
 * but k8's definition : pod is smallest deployable unit in kubernetes , one pod have multiple containers 
 
+ POD definition:
+ ==============
+
+ apiVersion: v1
+ kind : Pod 
+
+
 # To create pod command is ?
 -------------------------------
 
@@ -174,6 +188,23 @@ container is unable to start
 ## LABLES:
 -----------------
 
+* Metadata (Labels)
+
+  metadata:
+  name: nginx-np
+  labels:
+    purpose: service-np-demo
+    project: roboshop
+    environment: dev
+
+ # Container Section
+
+spec:
+  containers:
+  - name: nginx
+    image: nginx   
+
+
 * labels are used as selectors for other resources ......., labels values we cant keep long values, we can keep only 63 charcters 
 
 # Annotations"
@@ -185,7 +216,10 @@ container is unable to start
 
 ## Resource limiting:
 -----------------------
-* we can limit the resoures using resouce limits
+* we can limit the resoures using resouce limits, ( like cpu , memory)
+
+* soft limit ( for softwares)
+* hard limit ( for hardwares)
 
 
 # Vertical & Horizontal scaling:
@@ -216,6 +250,12 @@ container is unable to start
 --------------
 
 * Here data should be encoded 
+* for storing the username and password for DB and other users 
+
+ Ex: echo -n "username" | base64 
+  
+   The above command will give you base64 encrypted format 
+
 
 # Service Mesh:
 ---------------
@@ -230,9 +270,15 @@ container is unable to start
 
  3. nodeport -- it will create a loadbalancer and nodeport in the all nodes
 
+ * like assiging ports to containers 
+
 
 # NodePorts:
 ---------------------
+
+👉 What is NodePort?
+
+NodePort is a Service type in Kubernetes that exposes a Pod externally by opening a static port (30000–32767) on each cluster node. External users can access the application using NodeIP:NodePort.
 
 * node port ip is a cluster IP , but it has extra futures, opening a port in worker node , it has internal communication capalities 
 

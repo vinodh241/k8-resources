@@ -299,4 +299,14 @@ NodePort is a Service type in Kubernetes that exposes a Pod externally by openin
 * Pod is sub set of replicaset
 * replicaset is a subset of deployment 
 
-#
+# Volumes:
+===========
+
+* volumes nothing but = storage 
+* EBS -- elastic block storage  - Docker
+* EFS -- elastic file system  - kubernetes 
+
+
+
+
+

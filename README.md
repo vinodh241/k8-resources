@@ -331,4 +331,15 @@ EBS Static provisioning:
 ------------------------
  * it is the physical representation of the volumes
 
- 
+ # PVC:
+ ==========
+
+ * it is claiming resources of the storage . i;e PV 
+
+
+* Once PV and PVC volumes created need to attch them into POD
+
+* once you can create PV and PVC its should go to the perticlur availability zone , we should create a lables to nodes and use those lables as ( NODE Selectors) 
+ In side POD
+
+ * 

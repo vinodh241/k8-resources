@@ -1,3 +1,5 @@
+# creating PV volume
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -11,3 +13,61 @@ spec:
     driver: ebs.csi.aws.com
     fsType: ext4
     volumeHandle: vol-0d388db99b24b515a
+---
+# creating PVC volume
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ebs-static
+spec:
+  storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
+  volumeName: ebs-static  # calling PV volume here  and need to claiming here 
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 15Gi
+---
+# after creating PV and PVC you need to attach them to pod 
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    purpose: ebs-static-demo
+    project: roboshop
+spec:
+  nodeSelector:
+    topology.kubernetes.io/zone: us-east-1c
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts: # docker run -v host-path:container-path
+    - name: persistent-storage
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: ebs-static
+---
+# creating loadbalancer to access the application out side
+
+apiVersion: v1
+kind: Service 
+metadata: 
+  lables:
+    purpose: serivce-lb-demo
+    project: roboshop
+spec:
+  type: LoadBalancer
+  selector:
+    purpose: ebs-static-demo
+    project: roboshop
+  ports:
+    - protocal: TCP
+      port: 80 
+      targetPort: 80 
+---
+
+

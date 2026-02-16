@@ -306,7 +306,7 @@ NodePort is a Service type in Kubernetes that exposes a Pod externally by openin
 * EBS -- elastic block storage  - Docker
 * EFS -- elastic file system  - kubernetes 
 
-* in kubernetes, its  self created a storage classes t oreduce the dependencies between storage and remainig resources
+* in kubernetes, its self created a storage classes to oreduce the dependencies between storage and remainig resources
   on behalf us it will login and it will perform operations 
 
 * PV   -- persistant voulme
@@ -335,7 +335,7 @@ EBS Static provisioning:
  ==========
 
  * it is claiming resources of the storage . i;e PV 
-* Once PV and PVC volumes created need to attch them into POD
+ * Once PV and PVC volumes created need to attch them into POD
 
 * once you can create PV and PVC its should go to the perticlur availability zone , we should create a lables to nodes and use those   lables as ( NODE Selectors) 
  In side POD.

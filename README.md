@@ -331,6 +331,10 @@ EBS Static provisioning:
 ------------------------
  * it is the physical representation of the volumes
 
+ * kubectl apply -f "manifest.yaml"
+
+ *  kubectl delete pv "ebs-static"  -- pv volume name
+
  # PVC:
  ==========
 
@@ -339,3 +343,37 @@ EBS Static provisioning:
 
 * once you can create PV and PVC its should go to the perticlur availability zone , we should create a lables to nodes and use those   lables as ( NODE Selectors) 
  In side POD.
+
+
+
+# EBS Dynamic:
+==============
+
+* No need to create disk manually
+* Storage class  is the resource that will create disk automatically
+
+* EKS admin will create a storage class and he will make it available for us .we use this sc to create disk and PV 
+
+# EFS vs EBS:
+=============
+
+* Elastice file system  can be anywahere in network, EBS should be in same AZ 
+* EBS can only accesses only by one instances at a time EFS can be accessed by  mutliple instances 
+* EBS is is used for to store DB and EFS used for objects and files 
+* EBS size is fixed . EFS elatic in nature , it automatically grows ( Max size upto 49.TB)
+
+# Satefulset:
+===============
+* it is mainly used for databases.
+
+* Deployment is for  stateless application not stateful applications
+
+* Statefulset -- stateful application   
+
+# Deployment VS Stateful 
+==============================
+* PV and PVC is not manadatroy for deployment , but manadatroy for sateful applications 
+* Statefulset need headless service... i.e no cluster IP
+* Pods create in orderly manner in statefulset, Once first pod comes to running, then only other pod will create. While deletion reverse order follows
+* Pod identities are preserved in statefulset, because if any pod crashes, statefulset create another pod with same name, so that communication is easy between pods..
+

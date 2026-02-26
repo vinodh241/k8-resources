@@ -366,14 +366,29 @@ EBS Static provisioning:
 ===============
 * it is mainly used for databases.
 
-* Deployment is for  stateless application not stateful applications
+
 
 * Statefulset -- stateful application   
 
 # Deployment VS Stateful 
 ==============================
+* Deployment is for  stateless application not stateful applications
+* SatefulSet is for DB related applications like MongoDb, MYSQL, Redis, RabbitMq, promotheous, Grafana, ELK, 
+* Deploymemt pods can sahre pv and PVC but satefulset each pod creates its own volume
 * PV and PVC is not manadatroy for deployment , but manadatroy for sateful applications 
 * Statefulset need headless service... i.e no cluster IP
 * Pods create in orderly manner in statefulset, Once first pod comes to running, then only other pod will create. While deletion reverse order follows
 * Pod identities are preserved in statefulset, because if any pod crashes, statefulset create another pod with same name, so that communication is easy between pods..
+
+# K8's Volumes:
+===============
+
+* Volumes should be outside of cluster 
+
+Horizontal Autoscaling vs Vertical Autoscaling
+===============================================
+
+* Harizontal Auto scaling is increasing no of replicas
+* Vertical autoscaling is increasing no of resources ( single point of failure)
+
 
